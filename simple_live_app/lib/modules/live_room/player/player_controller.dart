@@ -34,9 +34,17 @@ mixin PlayerMixin {
           ? MPVLogLevel.info
           : MPVLogLevel.error,
     ),
-  )..setOptions({
-      'ao': AppSettingsController.instance.audioOutputDriver.value,
-    });
+  );
+  /// 初始化播放器并设置 ao 参数
+  Future<void> initializePlayer() async {
+    // 设置 ao（音频输出驱动）
+    if (player.platform is NativePlayer) {
+      await (player.platform as dynamic).setProperty(
+        'ao',
+        AppSettingsController.instance.audioOutputDriver.value,
+      );
+    }
+  }
 
   /// 视频控制器
   late final videoController = VideoController(
