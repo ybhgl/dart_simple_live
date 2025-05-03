@@ -32,6 +32,8 @@ class OtherSettingsController extends BaseController {
   };
 
   var audioOutputDrivers = {
+    "null": "null (No audio output)",
+    "auto": "auto",
     "pulse": "pulse (Linux, uses PulseAudio)",
     "pipewire": "pipewire (Linux, via Pulse compatibility or native)",
     "alsa": "alsa (Linux only)",
@@ -43,8 +45,7 @@ class OtherSettingsController extends BaseController {
     "audiotrack": "audiotrack (Android only)",
     "sdl": "sdl (Cross-platform, via SDL library)",
     "openal": "openal (Cross-platform, OpenAL backend)",
-    "libao": "libao (Cross-platform, uses libao library)",
-    "null": "null (No audio output)"
+    "libao": "libao (Cross-platform, uses libao library)"
   };
 
   var hardwareDecoder = {
