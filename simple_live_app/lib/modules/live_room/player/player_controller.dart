@@ -44,8 +44,8 @@ mixin PlayerMixin {
     player,
     configuration: AppSettingsController.instance.customPlayerOutput.value
         ? VideoControllerConfiguration(
-            vo: AppSettingsController.instance.videoOutputDriver.value,
             ao: AppSettingsController.instance.audioOutputDriver.value,
+            vo: AppSettingsController.instance.videoOutputDriver.value,
             hwdec: AppSettingsController.instance.videoHardwareDecoder.value,
           )
         : AppSettingsController.instance.playerCompatMode.value
